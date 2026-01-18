@@ -1,0 +1,31 @@
+{
+  "name": "vibe_figma",
+  "scripts": {
+    "dev": "bun run --hot src/index.ts"
+  },
+  "dependencies": {
+    "@ai-sdk/google": "^3.0.10",
+    "@babel/generator": "^7.28.6",
+    "@babel/parser": "^7.28.6",
+    "@babel/traverse": "^7.28.6",
+    "@babel/types": "^7.28.6",
+    "ai": "^6.0.39",
+    "colord": "2.9.3",
+    "css-what": "6.1.0",
+    "hono": "^4.11.4",
+    "hono-rate-limiter": "^0.5.3",
+    "htmltojsx": "^0.3.0",
+    "postcss": "^8.4.20",
+    "postcss-safe-parser": "^6.0.0",
+    "prettier": "^3.8.0",
+    "tailwindcss": "3",
+    "zod": "^4.3.5"
+  },
+  "devDependencies": {
+    "@types/babel__generator": "^7.27.0",
+    "@types/babel__traverse": "^7.28.0",
+    "@types/bun": "latest",
+    "@types/htmltojsx": "^0.0.33",
+    "@types/postcss-safe-parser": "^5.0.1"
+  }
+}
