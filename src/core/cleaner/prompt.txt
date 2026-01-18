@@ -15,6 +15,8 @@ The final output must render IDENTICALLY to the cloned website. This is NON-NEGO
 - DO NOT change images, icons, or SVG content
 - DO NOT add new UI elements or remove existing ones
 - DO NOT modify text content
+- **NEVER replace SVG icons with emojis** - if the original uses SVG, keep the SVG
+- DO NOT remove SVG elements and substitute them with emoji characters
 
 **WHAT YOU MUST FIX:**
 - Clean up machine-generated "junk" classes (opacity-100, static, origin-*, etc.)
