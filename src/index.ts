@@ -7,6 +7,7 @@ import { FigmaToReact } from './core/figma/figma-react'
 import { env, validateEnv, isProduction } from './config/env'
 import { validateRequest, figmaRequestSchema } from './middleware/validation'
 import { apiKeyAuth } from './middleware/security'
+import { replaceBase64DataUrlsWithPrefix } from './utils/helpers'
 
 validateEnv()
 
@@ -103,7 +104,7 @@ app.post('/api/vibe-figma', async (c) => {
       success: true,
       data: {
         jsx: result.jsx,
-        assets: result.assets,
+        assets: replaceBase64DataUrlsWithPrefix(result.assets),
         componentName: result.componentName,
         fonts: result.fonts,
         css: result.css
