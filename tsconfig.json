@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "strict": false,
+    "jsx": "react-jsx",
+    "jsxImportSource": "hono/jsx",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "target": "es2015",
+    "downlevelIteration": true,
+    "module": "nodenext",
+    "moduleResolution": "nodenext"
+  }
+}
