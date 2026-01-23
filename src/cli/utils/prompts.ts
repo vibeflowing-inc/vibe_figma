@@ -50,13 +50,7 @@ export async function promptForMissingInputs(
         type: 'text',
         name: 'component',
         message: 'Component output path:',
-        initial: options.component || './Component.tsx',
-      },
-      {
-        type: 'text',
-        name: 'css',
-        message: 'CSS output path (leave empty to skip):',
-        initial: options.css || '',
+        initial: options.component || './src/components',
       },
       {
         type: 'text',
@@ -98,8 +92,7 @@ export function showConversionSummary(options: CliOptions): void {
   console.log('\nConversion Settings:')
   console.log('━'.repeat(50))
   console.log(`URL:          ${options.url}`)
-  console.log(`Component:    ${options.component || 'Auto-generated'}`)
-  console.log(`CSS:          ${options.css || 'Auto-generated'}`)
+  console.log(`Component:    ${options.component || './src/components'}`)
   console.log(`Assets:       ${options.assets || './public'}`)
   console.log(`Tailwind:     ${options.useTailwind ? 'Yes' : 'No'}`)
   console.log(`Optimize:     ${options.optimizeComponents ? 'Yes' : 'No'}`)
@@ -115,8 +108,33 @@ export function resolveOutputPaths(
   options: CliOptions,
   componentName: string
 ): { component: string; css: string | undefined; assets: string } {
-  const component = options.component || `./${componentName}.tsx`
-  const css = options.css || (options.useTailwind ? undefined : `./${componentName}.css`)
+  // Handle component path - if it's a directory, append component name
+  let component: string
+  const componentPath = options.component || './src/components'
+
+  // Normalize path separators to forward slash
+  const normalizedPath = componentPath.replace(/\\/g, '/')
+
+  // Check if path ends with / (indicating it's a directory)
+  if (normalizedPath.endsWith('/')) {
+    component = `${normalizedPath}${componentName}.tsx`
+  } else {
+    // Check if it has an extension, if not treat as directory
+    const hasExtension = /\.(tsx?|jsx?)$/.test(normalizedPath)
+    if (hasExtension) {
+      component = componentPath
+    } else {
+      component = `${normalizedPath}/${componentName}.tsx`
+    }
+  }
+
+  // If not using Tailwind, generate CSS path in same directory as component
+  let css: string | undefined
+  if (!options.useTailwind) {
+    const componentDir = component.substring(0, component.lastIndexOf('/')) || '.'
+    css = `${componentDir}/${componentName}.css`
+  }
+
   const assets = options.assets || './public'
 
   return { component, css, assets }

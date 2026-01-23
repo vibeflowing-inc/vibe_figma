@@ -1,9 +1,7 @@
 export interface CliOptions {
   url?: string
   token?: string
-  authType?: 'x-figma-token' | 'authorization'
   component?: string
-  css?: string
   assets?: string
   useTailwind?: boolean
   optimizeComponents?: boolean

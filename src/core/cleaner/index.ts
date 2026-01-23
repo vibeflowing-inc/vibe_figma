@@ -3,13 +3,13 @@ import { google } from "@ai-sdk/google"
 import fs from 'fs/promises'
 import prompt from "./prompt.txt"
 
-if(!process.env.GOOGLE_GENERATIVE_AI_API_KEY) {
-    throw new Error("GOOGLE_GENERATIVE_AI_API_KEY is not set")
-}
 
 export const cleanupGeneratedCodeToReadable = async (code: string): Promise<string> => {
     try {
-
+        
+        if(!process.env.GOOGLE_GENERATIVE_AI_API_KEY) {
+            throw new Error("GOOGLE_GENERATIVE_AI_API_KEY is not set")
+        }
         const response = await generateText({
             model: google('gemini-3-flash-preview'),
             system: prompt,

@@ -9,22 +9,14 @@ import type { CliOptions } from '../types.js'
  */
 export async function convertCommand(options: CliOptions): Promise<void> {
   try {
-    // Show banner
     logger.showBanner()
-
-    // Check if interactive mode is needed
     const needsInteractive = options.interactive || !options.url || (!options.token && !process.env.FIGMA_TOKEN && !process.env.FIGMA_ACCESS_TOKEN)
-
-    // Prompt for missing inputs
     let finalOptions = options
     if (needsInteractive) {
       finalOptions = await promptForMissingInputs(options)
     } else {
-      // Use environment token if not provided
       finalOptions.token = finalOptions.token || process.env.FIGMA_TOKEN || process.env.FIGMA_ACCESS_TOKEN
     }
-
-    // Validate required inputs
     if (!finalOptions.url) {
       throw new Error('Figma URL is required. Use --url or --interactive flag.')
     }
@@ -32,19 +24,15 @@ export async function convertCommand(options: CliOptions): Promise<void> {
     if (!finalOptions.token) {
       throw new Error('Figma access token is required. Set FIGMA_TOKEN environment variable or use --token flag.')
     }
-
-    // Show conversion summary
     showConversionSummary(finalOptions)
-
-    // Start conversion
     logger.startSpinner('Fetching Figma design...')
 
     // Create converter instance
     const converter = new FigmaToReact(
       finalOptions.token,
-      finalOptions.authType || 'x-figma-token',
+      'x-figma-token',
       {
-        useTailwind: finalOptions.useTailwind ?? false,
+        useTailwind: finalOptions.useTailwind ?? true,
         optimizeComponents: finalOptions.optimizeComponents ?? false,
         useCodeCleaner: finalOptions.useCodeCleaner ?? false,
         generateClasses: finalOptions.generateClasses ?? true,
@@ -61,14 +49,8 @@ export async function convertCommand(options: CliOptions): Promise<void> {
     if (!result) {
       throw new Error('Conversion failed. Please check your Figma URL and access token.')
     }
-
-    logger.updateSpinner('Processing results...')
-
-    // Resolve output paths
+    logger.succeedSpinner('Conversion complete!')
     const paths = resolveOutputPaths(finalOptions, result.componentName)
-
-    // Save results
-    logger.updateSpinner('Saving component...')
     const savedFiles = await saveConversionResults(
       {
         jsx: result.jsx,
@@ -79,10 +61,6 @@ export async function convertCommand(options: CliOptions): Promise<void> {
       paths
     )
 
-    // Success!
-    logger.succeedSpinner('Conversion complete!')
-
-    // Show summary
     logger.showSummary(savedFiles)
 
   } catch (error) {

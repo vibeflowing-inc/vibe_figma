@@ -16,11 +16,9 @@ program
   .argument('[url]', 'Figma file/node URL')
   .option('-t, --token <token>', 'Figma access token (overrides FIGMA_TOKEN env var)')
   .option('-u, --url <url>', 'Figma file/node URL')
-  .option('--auth-type <type>', 'Token type: x-figma-token | authorization', 'x-figma-token')
-  .option('-c, --component <path>', 'Component output path (default: ./[ComponentName].tsx)')
-  .option('--css <path>', 'CSS output path (default: ./[ComponentName].css)')
+  .option('-c, --component <path>', 'Component output path (default: ./src/components/[ComponentName].tsx)')
   .option('-a, --assets <dir>', 'Assets directory (default: ./public)')
-  .option('--tailwind', 'Use Tailwind CSS', false)
+  .option('--no-tailwind', 'Disable Tailwind CSS (enabled by default)')
   .option('--optimize', 'Optimize components', false)
   .option('--clean', 'Use AI code cleaner', false)
   .option('--no-classes', 'Don\'t generate CSS classes')
@@ -33,11 +31,9 @@ program
     const cliOptions: CliOptions = {
       url: urlArg || options.url,
       token: options.token,
-      authType: options.authType,
       component: options.component,
-      css: options.css,
       assets: options.assets,
-      useTailwind: options.tailwind,
+      useTailwind: options.tailwind !== false,
       optimizeComponents: options.optimize,
       useCodeCleaner: options.clean,
       generateClasses: options.classes !== false,
