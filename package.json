@@ -1,8 +1,9 @@
 {
-  "name": "vibe_figma",
+  "name": "vibefigma",
   "version": "1.0.0",
-  "description": "Convert Figma designs to React components",
+  "description": "Convert Figma designs to React components with Tailwind CSS",
   "type": "module",
+  "main": "dist/cli/index.js",
   "bin": {
     "vibefigma": "./bin/vibefigma.js"
   },
@@ -10,7 +11,8 @@
     "bin/",
     "dist/cli/",
     "README.md",
-    "LICENSE"
+    "LICENSE",
+    "NOTICE"
   ],
   "keywords": [
     "figma",
@@ -18,13 +20,37 @@
     "converter",
     "cli",
     "jsx",
-    "design-to-code"
+    "tsx",
+    "tailwind",
+    "tailwindcss",
+    "design-to-code",
+    "figma-to-react",
+    "figma-api",
+    "code-generation",
+    "component-generator"
   ],
+  "author": {
+    "name": "VibeFlowing Inc",
+    "url": "https://vibeflow.ai"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vibeflowing-inc/vibe_figma.git"
+  },
+  "bugs": {
+    "url": "https://github.com/vibeflowing-inc/vibe_figma/issues"
+  },
+  "homepage": "https://github.com/vibeflowing-inc/vibe_figma#readme",
+  "license": "FSL-1.1-MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "scripts": {
     "dev": "bun run --hot src/index.ts",
     "dev:cli": "bun run src/cli/index.ts",
     "build:cli": "bun build src/cli/index.ts --outfile dist/cli/index.js --target node --format esm",
-    "cli": "node bin/vibefigma.js"
+    "cli": "node bin/vibefigma.js",
+    "prepublishOnly": "bun run build:cli"
   },
   "dependencies": {
     "@ai-sdk/google": "^3.0.10",
