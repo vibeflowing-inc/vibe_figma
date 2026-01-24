@@ -47,7 +47,7 @@ No installation required! Just run:
 npx vibefigma [figma-url] --token YOUR_FIGMA_TOKEN
 
 # Example with a public design:
-npx vibefigma https://www.figma.com/design/rZbJ7EQucq6UCkqlIl1a6P/Personal-Portfolio-Website-Template--Community?node-id=7-191 --token YOUR_TOKEN
+npx vibefigma "https://www.figma.com/design/rZbJ7EQucq6UCkqlIl1a6P/Personal-Portfolio-Website-Template--Community?node-id=7-191" --token YOUR_TOKEN
 ```
 
 ### Using Environment Variable
@@ -56,7 +56,7 @@ Set your Figma token once:
 
 ```bash
 export FIGMA_TOKEN=your_figma_access_token
-npx vibefigma https://www.figma.com/design/YOUR_FILE_ID
+npx vibefigma "https://www.figma.com/design/YOUR_FILE_ID"
 ```
 
 ### Using our CLI 
@@ -80,7 +80,7 @@ This will prompt you for:
 
 ```bash
 # Convert a Figma design to React component
-npx vibefigma https://www.figma.com/design/YOUR_FILE_ID?node-id=X-Y
+npx vibefigma "https://www.figma.com/design/YOUR_FILE_ID?node-id=X-Y"
 ```
 
 ### Custom Output Paths
