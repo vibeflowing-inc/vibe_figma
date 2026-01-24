@@ -138,9 +138,8 @@ Options:
   -h, --help                    Display help for command
 ```
 
-## 🛠️ Development
 
-### API Server
+## API Server
 
 This project also includes a REST API server:
 
@@ -153,6 +152,30 @@ bun run dev
 
 # Server runs on http://localhost:3000
 ```
+
+### Configuration
+
+#### Environment Variables
+
+Create a `.env` file:
+
+```env
+GOOGLE_GENERATIVE_AI_API_KEY=your_google_ai_key
+PORT=3000
+HOST=0.0.0.0
+CORS_ORIGIN=*
+```
+
+### API Usage
+
+The project includes a REST API for Figma to React conversion:
+
+```bash
+POST /v1/api/vibe-figma
+```
+
+See [API.md](docs/API.md) for full API documentation.
+
 
 ### CLI Development
 
@@ -167,35 +190,6 @@ bun run build:cli
 bun run cli -- --help
 ```
 
-## API Usage
-
-The project includes a REST API for Figma to React conversion:
-
-```bash
-POST /v1/api/vibe-figma
-```
-
-See [API.md](docs/API.md) for full API documentation.
-
-## Configuration
-
-### Environment Variables
-
-Create a `.env` file:
-
-```env
-# Required for CLI
-FIGMA_TOKEN=your_figma_access_token
-
-# Optional: For AI code cleanup feature
-GOOGLE_GENERATIVE_AI_API_KEY=your_google_ai_key
-
-# API Server Configuration (for development server)
-PORT=3000
-HOST=0.0.0.0
-CORS_ORIGIN=*
-```
-
 ## Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
@@ -205,8 +199,6 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 This project includes code derived from [css-to-tailwindcss](https://github.com/Jackardios/css-to-tailwindcss) by Salakhutdinov Salavat, licensed under the MIT License.
 
 ## License
-
-Copyright 2026 VibeFlowing Inc.
 
 This project is licensed under the Functional Source License, Version 1.1, MIT Future License (FSL-1.1-MIT). See the [LICENSE](LICENSE) file for the full license text.
 
