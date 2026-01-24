@@ -3,11 +3,11 @@ import { cors } from 'hono/cors'
 import { logger } from 'hono/logger'
 import { secureHeaders } from 'hono/secure-headers'
 import { rateLimiter } from 'hono-rate-limiter'
-import { FigmaToReact } from './core/figma/figma-react'
-import { env, validateEnv, isProduction } from './config/env'
-import { validateRequest, figmaRequestSchema } from './middleware/validation'
-import { apiKeyAuth } from './middleware/security'
-import { replaceBase64DataUrlsWithPrefix } from './utils/helpers'
+import { FigmaToReact } from './core/figma/figma-react.js'
+import { env, validateEnv, isProduction } from './config/env.js'
+import { validateRequest, figmaRequestSchema } from './middleware/validation.js'
+import { apiKeyAuth } from './middleware/security.js'
+import { replaceBase64DataUrlsWithPrefix } from './utils/helpers.js'
 
 validateEnv()
 

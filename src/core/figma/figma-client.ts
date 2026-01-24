@@ -3,7 +3,7 @@ import type {
     FigmaFileNodesResponse,
     FigmaFileResponse,
     ImportOptions
-} from "./types"
+} from "./types.js"
 
 
 function extractFileKey(url: string): string | null {
@@ -66,8 +66,6 @@ export const importFigma = async ({
         } else {
             apiUrl = `https://api.figma.com/v1/files/${fileKey}${buildQueryString(options)}`;
         }
-
-        console.log(`Fetching from: ${apiUrl}`);
 
         const headers: Record<string, string> = {};
         if (authType === 'authorization') {

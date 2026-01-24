@@ -1,7 +1,7 @@
 import type { Config } from 'tailwindcss';
-import { TailwindConverter } from '../css-to-tailwind';
-import type { TailwindNode } from '../css-to-tailwind/tailwind-nodes-manager';
-import { isResolvedTailwindNode } from '../css-to-tailwind/tailwind-nodes-manager';
+import { TailwindConverter } from '../css-to-tailwind/index.js';
+import type { TailwindNode } from '../css-to-tailwind/tailwind-nodes-manager.js';
+import { isResolvedTailwindNode } from '../css-to-tailwind/tailwind-nodes-manager.js';
 
 export interface TailwindConversionResult {
   tailwindClasses: Map<string, string[]>;

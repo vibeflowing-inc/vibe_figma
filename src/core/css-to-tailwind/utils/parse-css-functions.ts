@@ -1,4 +1,4 @@
-import { parseCSSFunction } from './parse-css-function';
+import { parseCSSFunction } from './parse-css-function.js';
 
 const cssFunctionRegexp = /([\w-]+)\((.*?)\)/gm;
 

@@ -1,5 +1,5 @@
 import type { Context, Next } from 'hono'
-import { env } from '../config/env'
+import { env } from '../config/env.js'
 
 export function apiKeyAuth() {
   return async (c: Context, next: Next) => {

@@ -1,7 +1,12 @@
 import { parse } from "@babel/parser";
-import traverse, { NodePath } from "@babel/traverse";
-import generate from "@babel/generator";
+import _traverse, { NodePath } from "@babel/traverse";
+import _generate from "@babel/generator";
 import * as t from "@babel/types";
+
+// @ts-ignore - Babel packages have type issues with default exports
+const traverse = (_traverse as any).default || _traverse;
+// @ts-ignore
+const generate = (_generate as any).default || _generate;
 
 type Options = {
   componentName?: string;

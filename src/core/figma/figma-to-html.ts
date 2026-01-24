@@ -1,8 +1,8 @@
-import type { FigmaToHTMLOptions } from "./types";
-import { FigmaToTailwindConverter } from "./figma-to-tailwind";
+import type { FigmaToHTMLOptions } from "./types.js";
+import { FigmaToTailwindConverter } from "./figma-to-tailwind.js";
 import HTMLtoJSX from "htmltojsx";
-import { generateComponentName } from "./utils/component-name";
-import { transformJsx } from "./transform-jsx";
+import { generateComponentName } from "./utils/component-name.js";
+import { transformJsx } from "./transform-jsx.js";
 
 export class FigmaToHTML {
   options: FigmaToHTMLOptions & Record<string, any>;
@@ -170,12 +170,7 @@ ${finalHtml}
       componentName: generateComponentName(figmaNode.name),
       jsx: tJSX.code,
       fonts,
-      css: `${
-        noTailwindImport
-          ? ""
-          : "@tailwind base;\n@tailwind components;\n@tailwind utilities;\n"
-      }
-  ${css}${tailwindCSS}`,
+      css: `${css}${tailwindCSS}`,
     };
   }
 
@@ -468,13 +463,13 @@ ${childrenHTML}
       : "0";
     const viewBoxWidth = geometryBounds
       ? this.formatNumber(
-          Math.max(0, geometryBounds.maxX - geometryBounds.minX),
-        )
+        Math.max(0, geometryBounds.maxX - geometryBounds.minX),
+      )
       : width;
     const viewBoxHeight = geometryBounds
       ? this.formatNumber(
-          Math.max(0, geometryBounds.maxY - geometryBounds.minY),
-        )
+        Math.max(0, geometryBounds.maxY - geometryBounds.minY),
+      )
       : height;
 
     const content = shapes.map((line) => `  ${line}`).join("\n");
@@ -990,8 +985,8 @@ ${childrenHTML}
 
     const strokeGeometry = Array.isArray(node.strokeGeometry)
       ? node.strokeGeometry.filter(
-          (segment: any) => segment && typeof segment.path === "string",
-        )
+        (segment: any) => segment && typeof segment.path === "string",
+      )
       : [];
 
     const applyFillPaint = () => {
@@ -1092,7 +1087,7 @@ ${childrenHTML}
 
     const strokeWeight =
       typeof node.strokeWeight === "number" &&
-      Number.isFinite(node.strokeWeight)
+        Number.isFinite(node.strokeWeight)
         ? node.strokeWeight
         : 1;
     strokeAttrs += ` stroke-width="${this.formatNumber(strokeWeight)}"`;

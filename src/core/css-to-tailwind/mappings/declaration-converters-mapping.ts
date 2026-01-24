@@ -1,15 +1,15 @@
 import type { Declaration } from 'postcss';
-import type { ResolvedTailwindConverterConfig } from '../tailwind-converter';
+import type { ResolvedTailwindConverterConfig } from '../tailwind-converter.js';
 
-import { UTILITIES_MAPPING } from './utilities-mapping';
+import { UTILITIES_MAPPING } from './utilities-mapping.js';
 import {
   normalizeColorValue,
   normalizeSizeValue,
   normalizeValue,
-} from '../utils/converter-mapping-by-tailwind-theme';
-import { parseCSSFunctions } from '../utils/parse-css-functions';
-import { removeUnnecessarySpaces } from '../utils/remove-unnecessary-spaces';
-import { isCSSVariable } from '../utils/is-css-variable';
+} from '../utils/converter-mapping-by-tailwind-theme.js';
+import { parseCSSFunctions } from '../utils/parse-css-functions.js';
+import { removeUnnecessarySpaces } from '../utils/remove-unnecessary-spaces.js';
+import { isCSSVariable } from '../utils/is-css-variable.js';
 
 export function prepareArbitraryValue(value: string) {
   return normalizeValue(value).replace(/_/g, '\\_').replace(/\s+/g, '_');

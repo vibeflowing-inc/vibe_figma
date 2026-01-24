@@ -1,12 +1,12 @@
-import { importFigma, fetchFigmaImages } from './figma-client';
-import { FigmaToHTML } from './figma-to-html';
-import { transformJsx } from './transform-jsx';
-import { cleanupGeneratedCodeToReadable } from '../cleaner';
+import { importFigma, fetchFigmaImages } from './figma-client.js';
+import { FigmaToHTML } from './figma-to-html.js';
+import { transformJsx } from './transform-jsx.js';
+import { cleanupGeneratedCodeToReadable } from '../cleaner/index.js';
 import type {
     FigmaToReactOptions,
     FigmaToReactResult,
     ImportOptions
-} from './types';
+} from './types.js';
 
 export class FigmaToReact {
     private accessToken: string;

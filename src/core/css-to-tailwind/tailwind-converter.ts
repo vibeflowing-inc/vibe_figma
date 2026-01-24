@@ -1,6 +1,6 @@
 import type { AttributeSelector, Selector } from 'css-what';
 import type { Config } from 'tailwindcss';
-import type { ConverterMapping } from './types/converter-mapping';
+import type { ConverterMapping } from './types/converter-mapping.js';
 
 import type { AcceptedPlugin } from 'postcss';
 import postcss, {
@@ -14,26 +14,26 @@ import postcss, {
 import postcssSafeParser from 'postcss-safe-parser';
 import { parse, stringify, isTraversal } from 'css-what';
 
-import type { TailwindNode } from './tailwind-nodes-manager';
-import { TailwindNodesManager } from './tailwind-nodes-manager';
-import { isAtRuleNode } from './utils/is-at-rule-node';
+import type { TailwindNode } from './tailwind-nodes-manager.js';
+import { TailwindNodesManager } from './tailwind-nodes-manager.js';
+import { isAtRuleNode } from './utils/is-at-rule-node.js';
 import {
   converterMappingByTailwindTheme,
   normalizeAtRuleParams,
-} from './utils/converter-mapping-by-tailwind-theme';
+} from './utils/converter-mapping-by-tailwind-theme.js';
 import {
   convertDeclarationValue,
   prepareArbitraryValue,
   DECLARATION_CONVERTERS_MAPPING,
-} from './mappings/declaration-converters-mapping';
-import { isChildNode } from './utils/is-child-node';
-import { MEDIA_PARAMS_MAPPING } from './mappings/media-params-mapping';
-import { removeUnnecessarySpaces } from './utils/remove-unnecessary-spaces';
-import { reduceTailwindClasses } from './utils/reduce-tailwind-classes';
-import { PSEUDOS_MAPPING } from './mappings/pseudos-mapping';
-import { detectIndent } from './utils/detect-indent';
-import { resolveConfig } from './utils/resolve-config';
-import type {ResolvedTailwindConfig} from "./utils/resolve-config"
+} from './mappings/declaration-converters-mapping.js';
+import { isChildNode } from './utils/is-child-node.js';
+import { MEDIA_PARAMS_MAPPING } from './mappings/media-params-mapping.js';
+import { removeUnnecessarySpaces } from './utils/remove-unnecessary-spaces.js';
+import { reduceTailwindClasses } from './utils/reduce-tailwind-classes.js';
+import { PSEUDOS_MAPPING } from './mappings/pseudos-mapping.js';
+import { detectIndent } from './utils/detect-indent.js';
+import { resolveConfig } from './utils/resolve-config.js';
+import type {ResolvedTailwindConfig} from "./utils/resolve-config.js"
 export interface TailwindConverterConfig {
   remInPx?: number | null;
   tailwindConfig?: Config;

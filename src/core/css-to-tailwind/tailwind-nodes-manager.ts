@@ -1,6 +1,6 @@
 import { type AtRule, type Node, Rule,  type ChildNode } from 'postcss';
-import { isAtRuleNode } from './utils/is-at-rule-node';
-import { isChildNode } from './utils/is-child-node';
+import { isAtRuleNode } from './utils/is-at-rule-node.js';
+import { isChildNode } from './utils/is-child-node.js';
 
 export interface ResolvedTailwindNode {
   rule: Rule;

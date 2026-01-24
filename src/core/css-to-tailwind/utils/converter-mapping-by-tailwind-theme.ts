@@ -4,14 +4,14 @@ import type {
   RecursiveKeyValuePair,
   ScreensConfig,
 } from 'tailwindcss/types/config';
-import type { ConverterMapping } from '../types/converter-mapping';
+import type { ConverterMapping } from '../types/converter-mapping.js';
 
 import { colord } from 'colord';
-import { buildMediaQueryByScreen } from './build-media-query-by-screen';
-import { flattenObject } from './flatten-object';
-import { remValueToPx } from './rem-value-to-px';
-import { normalizeNumbersInString } from './normalize-numbers-in-string';
-import { removeUnnecessarySpaces } from './remove-unnecessary-spaces';
+import { buildMediaQueryByScreen } from './build-media-query-by-screen.js';
+import { flattenObject } from './flatten-object.js';
+import { remValueToPx } from './rem-value-to-px.js';
+import { normalizeNumbersInString } from './normalize-numbers-in-string.js';
+import { removeUnnecessarySpaces } from './remove-unnecessary-spaces.js';
 
 export function normalizeValue(value: string) {
   return removeUnnecessarySpaces(normalizeNumbersInString(value));

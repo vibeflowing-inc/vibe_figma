@@ -1,5 +1,5 @@
 import type { ThemeConfig } from 'tailwindcss/types/config';
-import type { KnownKeys } from './utils/known-keys';
+import type { KnownKeys } from './utils/known-keys.js';
 
 export type ConverterMapping = Record<
   Exclude<KnownKeys<ThemeConfig>, 'keyframes' | 'container' | 'fontFamily'>,
