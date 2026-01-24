@@ -5,7 +5,7 @@ Transform your Figma designs into production-ready React components with Tailwin
 ## Demo Video
 
 <div align="center">
-  <a href="https://www.youtube.com/watch?v=6DhaK_thwkc">
+  <a href="https://www.youtube.com/watch?v=qEYmYixLd0E"> 
     <img src="https://img.youtube.com/vi/6DhaK_thwkc/maxresdefault.jpg" alt="VibeFigma Demo" style="width:100%;max-width:720px;">
   </a>
 </div>
