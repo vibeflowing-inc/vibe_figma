@@ -23,7 +23,27 @@ Transform your Figma designs into production-ready React components with Tailwin
 - **Tailwind CSS Support** - Automatic Tailwind class generation (enabled by default)
 - **Code Optimization** - Optional AI-powered code cleanup
 
-## Quick Start
+## Step 1: 🔑 Getting a Figma Access Token
+1. Go to [Figma Account Settings](https://www.figma.com/settings)
+2. Scroll to **Personal Access Tokens**
+3. Click **Generate new token**
+4. Give it a name and click **Generate**
+5. Copy the token (you won't see it again!)
+
+Set it as an environment variable:
+
+```bash
+# Linux/Mac
+export FIGMA_TOKEN=your_token_here
+
+# Windows (PowerShell)
+$env:FIGMA_TOKEN="your_token_here"
+
+# Windows (CMD)
+set FIGMA_TOKEN=your_token_here
+```
+
+## Step 2: Quick Start
 
 ### Using npx (Recommended)
 
@@ -45,7 +65,7 @@ export FIGMA_TOKEN=your_figma_access_token
 npx vibefigma https://www.figma.com/design/YOUR_FILE_ID
 ```
 
-### Interactive Mode
+### Using our CLI 
 
 ```bash
 npx vibefigma --interactive
@@ -56,7 +76,7 @@ This will prompt you for:
 - Access token (if not set in environment)
 - Output paths
 
-## Usage
+## Step 3: Advanced Usage
 
 ### Basic Usage
 
@@ -91,27 +111,6 @@ npx vibefigma [url] \
   --assets ./public/assets \
   --optimize \
   --clean
-```
-
-## 🔑 Getting a Figma Access Token
-
-1. Go to [Figma Account Settings](https://www.figma.com/settings)
-2. Scroll to **Personal Access Tokens**
-3. Click **Generate new token**
-4. Give it a name and click **Generate**
-5. Copy the token (you won't see it again!)
-
-Set it as an environment variable:
-
-```bash
-# Linux/Mac
-export FIGMA_TOKEN=your_token_here
-
-# Windows (PowerShell)
-$env:FIGMA_TOKEN="your_token_here"
-
-# Windows (CMD)
-set FIGMA_TOKEN=your_token_here
 ```
 
 ## Command Options
