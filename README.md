@@ -2,7 +2,7 @@
 
 Transform your Figma designs into production-ready React components with Tailwind CSS automatically. VibeFigma leverages the official Figma API to accurately extract design information and generate clean, maintainable code.
 
-## Demo
+## Demo Video
 
 <div align="center">
   <a href="https://www.youtube.com/watch?v=6DhaK_thwkc">
