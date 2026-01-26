@@ -48,9 +48,9 @@
   "scripts": {
     "dev": "bun run --hot src/index.ts",
     "dev:cli": "bun run src/cli/index.ts",
-    "build:cli": "bun build src/cli/index.ts --outfile dist/cli/index.js --target node --format esm --outdir dist",
+    "build:cli": "mkdir -p dist/cli && bun build src/cli/index.ts --outdir dist/cli --target node --format esm --entry-naming [name].js",
     "cli": "node bin/vibefigma.js",
-    "prepublishOnly": "bun run build:cli"
+    "prepublishOnly": "bun run build:cli",
   },
   "dependencies": {
     "@ai-sdk/google": "^3.0.10",
