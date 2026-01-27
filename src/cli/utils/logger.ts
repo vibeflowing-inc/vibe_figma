@@ -1,22 +1,48 @@
 import chalk from 'chalk'
 import ora, { type Ora } from 'ora'
 
-const BANNER = `
- _   _ _ _          _____ _
-| | | (_) |__   ___|  ___(_) __ _ _ __ ___   __ _
-| | | | | '_ \\ / _ \\ |_  | |/ _\` | '_ \` _ \\ / _\` |
-| |_| | | |_) |  __/  _| | | (_| | | | | | | (_| |
- \\___/|_|_.__/ \\___|_|   |_|\\__, |_| |_| |_|\\__,_|
-                            |___/
+// Create gradient banner with 3D blocky effect using Figma brand colors (ultra-smooth gradient, lighter tones)
+const createBanner = () => {
+  const colors = [
+    '#FF8A7A', '#FF9382', '#FF9C8A', '#FFA592', '#FFAE9A', '#FFB7A2', '#FFC0AA',
+    '#FFC4B8', '#FFC8C6', '#FFCCD4', '#FFD0E2', '#F5C4E6', '#EBB8EA', '#E1ACEE',
+    '#D7A0F2', '#CD94F6', '#C388FA', '#B97CFE', '#AF70FF', '#A564FF', '#9B5EFF',
+    '#9168FF', '#8772FF', '#7D7CFF', '#7386FF', '#6990FF', '#5F9AFF', '#55A4FF',
+    '#4BAEFF', '#41B8FF', '#4EC2FF', '#5BCCFF', '#68D6FF', '#75E0FF', '#82EAFF',
+    '#8AEEDE', '#92F2BC', '#9AF69A', '#8EF5A0', '#82F4A6', '#76F3AC', '#6AF2B2'
+  ]
 
-${chalk.cyan('          by vibeflow.ai')}
-`
+  const lines = [
+    '  ██╗   ██╗██╗██████╗ ███████╗███████╗██╗ ██████╗ ███╗   ███╗ █████╗',
+    '  ██║   ██║██║██╔══██╗██╔════╝██╔════╝██║██╔════╝ ████╗ ████║██╔══██╗',
+    '  ██║   ██║██║██████╔╝█████╗  █████╗  ██║██║  ███╗██╔████╔██║███████║',
+    '  ╚██╗ ██╔╝██║██╔══██╗██╔══╝  ██╔══╝  ██║██║   ██║██║╚██╔╝██║██╔══██║',
+    '   ╚████╔╝ ██║██████╔╝███████╗██║     ██║╚██████╔╝██║ ╚═╝ ██║██║  ██║',
+    '    ╚═══╝  ╚═╝╚═════╝ ╚══════╝╚═╝     ╚═╝ ╚═════╝ ╚═╝     ╚═╝╚═╝  ╚═╝'
+  ]
+
+  const gradientLines = lines.map(line => {
+    const chars = line.split('')
+    const step = Math.max(1, Math.floor(chars.length / colors.length))
+
+    return chars.map((char, i) => {
+      const colorIndex = Math.min(Math.floor(i / step), colors.length - 1)
+      return chalk.hex(colors[colorIndex])(char)
+    }).join('')
+  })
+
+  return '\n' + gradientLines.join('\n') + '\n\n' +
+    chalk.hex('#666')('  ╔═══════════════════════════════════════════════════════════════════════════════════╗') + '\n' +
+    chalk.hex('#666')('  ║  ') + chalk.hex('#F24E1E')('Figma') + chalk.hex('#A259FF')(' → ') + chalk.hex('#1ABCFE')('React + Tailwind') + chalk.hex('#555')('  │  ') + chalk.hex('#999')('Design to Code in seconds') + chalk.hex('#777')(' • ') + chalk.hex('#1ABCFE')('https://vibeflow.ai') + chalk.hex('#666')('     ║') + '\n' +
+    chalk.hex('#666')('  ╚═══════════════════════════════════════════════════════════════════════════════════╝') + '\n'
+}
+
 
 export class Logger {
   private spinner: Ora | null = null
 
   showBanner() {
-    console.log(chalk.magenta(BANNER))
+    console.log(createBanner())
   }
 
   info(message: string) {

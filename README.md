@@ -1,56 +1,33 @@
 # VibeFigma - Figma to React Converter
 
-Transform your Figma designs into production-ready React components with Tailwind CSS automatically. VibeFigma leverages the official Figma API to accurately extract design information and generate clean, maintainable code.
-
-## Demo Video
+Transform your Figma designs into production-ready React components with Tailwind CSS automatically.
 
 <div align="center">
-  <a href="https://www.youtube.com/watch?v=qEYmYixLd0E"> 
-    <img src="https://img.youtube.com/vi/6DhaK_thwkc/maxresdefault.jpg" alt="VibeFigma Demo" style="width:100%;max-width:720px;">
-  </a>
+  <img src=".github/cli-demo.png" alt="VibeFigma CLI" style="width:100%;max-width:800px;">
 </div>
 
-## Features
+## Quick Start
 
-- **Official Figma API Integration** - Direct integration with Figma's API for accurate design extraction
-- **React Component Generation** - Convert Figma frames to React/TypeScript components
-- **Tailwind CSS Support** - Automatic Tailwind class generation (enabled by default)
-- **Code Optimization** - Optional AI-powered code cleanup
+VibeFigma can be used in multiple ways:
 
-## Step 1: 🔑 Getting a Figma Access Token
-1. Go to [Figma Account Settings](https://www.figma.com/settings)
-2. Scroll to **Personal Access Tokens**
-3. Click **Generate new token**
-4. Give it a name and click **Generate**
-5. Copy the token (you won't see it again!)
-
-Set it as an environment variable:
+### 1. Using our CLI (Interactive - Easiest!)
 
 ```bash
-# Linux/Mac
-export FIGMA_TOKEN=your_token_here
-
-# Windows (PowerShell)
-$env:FIGMA_TOKEN="your_token_here"
-
-# Windows (CMD)
-set FIGMA_TOKEN=your_token_here
+npx vibefigma --interactive
 ```
 
-## Step 2: Quick Start
+The CLI will guide you through:
+- Entering your Figma URL
+- Providing your access token
+- Choosing output paths
 
-### Using npx (Recommended)
-
-No installation required! Just run:
+### 2. Direct Command (Fast)
 
 ```bash
-npx vibefigma [figma-url] --token YOUR_FIGMA_TOKEN
-
-# Example with a public design:
-npx vibefigma "https://www.figma.com/design/rZbJ7EQucq6UCkqlIl1a6P/Personal-Portfolio-Website-Template--Community?node-id=7-191" --token YOUR_TOKEN
+npx vibefigma "https://www.figma.com/design/YOUR_FILE_ID?node-id=X-Y" --token YOUR_TOKEN
 ```
 
-### Using Environment Variable
+### 3. Using Environment Variable
 
 Set your Figma token once:
 
@@ -59,20 +36,20 @@ export FIGMA_TOKEN=your_figma_access_token
 npx vibefigma "https://www.figma.com/design/YOUR_FILE_ID"
 ```
 
-### Using our CLI 
+### 🔑 Getting a Figma Access Token
 
-```bash
-npx vibefigma --interactive
-```
+1. Go to [Figma Account Settings](https://www.figma.com/settings)
+2. Scroll to **Personal Access Tokens**
+3. Click **Generate new token**
+4. Give it a name and click **Generate**
+5. Copy the token (you won't see it again!)
 
-This will prompt you for:
-- Figma URL
-- Access token (if not set in environment)
-- Output paths
+## Features
 
-<div align="center">
-  <img src=".github/cli-demo.png" alt="VibeFigma CLI Demo" style="width:100%;max-width:800px;">
-</div>
+- **Official Figma API Integration** - Direct integration with Figma's API for accurate design extraction
+- **React Component Generation** - Convert Figma frames to React/TypeScript components
+- **Tailwind CSS Support** - Automatic Tailwind class generation (enabled by default)
+- **Code Optimization** - Optional AI-powered code cleanup
 
 ## Advanced Usage
 
@@ -190,6 +167,14 @@ bun run build:cli
 bun run cli -- --help
 ```
 
+## Demo Video
+
+<div align="center">
+  <a href="https://www.youtube.com/watch?v=qEYmYixLd0E">
+    <img src="https://img.youtube.com/vi/6DhaK_thwkc/maxresdefault.jpg" alt="VibeFigma Demo" style="width:100%;max-width:720px;">
+  </a>
+</div>
+
 ## Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
@@ -200,6 +185,6 @@ This project includes code derived from [css-to-tailwindcss](https://github.com/
 
 ## License
 
-This project is licensed under the Functional Source License, Version 1.1, MIT Future License (FSL-1.1-MIT). See the [LICENSE](LICENSE) file for the full license text.
+This project is licensed under the GNU Affero General Public License v3.0 (AGPL-3.0). See the [LICENSE](LICENSE) file for the full license text.
 
 See the [NOTICE](NOTICE) file for details about third-party code used in this project.
