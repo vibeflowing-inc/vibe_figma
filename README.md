@@ -22,7 +22,7 @@ The CLI will guide you through:
 - Providing your access token
 - Choosing output paths
 
-## 2. Claude Code Skill
+### 2. Claude Code Skill
 
 For Claude Code, install the skill to enable Figma to React conversion directly within your Claude Code environment.
 
