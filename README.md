@@ -10,7 +10,15 @@ Transform your Figma designs into production-ready React components with Tailwin
 
 VibeFigma can be used in multiple ways:
 
-### 1. Using our CLI (Interactive - Easiest!)
+## Claude Code Skill
+
+For Claude Code, install the skill to enable Figma to React conversion directly within your Claude Code environment.
+
+```sh
+npx npx skills add vibeflowing-inc/vibe_figma --skill vibefigma
+```
+
+### 2. Using our CLI (Interactive - Easiest!)
 
 ```bash
 npx vibefigma --interactive
@@ -21,10 +29,10 @@ The CLI will guide you through:
 - Providing your access token
 - Choosing output paths
 
-### 2. Direct Command (Fast)
+### 3. Direct Command (Fast)
 
 ```bash
-npx vibefigma "https://www.figma.com/design/YOUR_FILE_ID?node-id=X-Y" --token YOUR_TOKEN
+npx vibefigma "https://www.figma.com/design/4i8Tp5btFPRqtkYXplnfT6/50-Web-Sign-up-log-in-designs--Community-?node-id=26-2944&t=d8ZfhZOwcLuUz0Jz-4" --token YOUR_TOKEN
 ```
 
 ### 3. Using Environment Variable
@@ -33,7 +41,7 @@ Set your Figma token once:
 
 ```bash
 export FIGMA_TOKEN=your_figma_access_token
-npx vibefigma "https://www.figma.com/design/YOUR_FILE_ID"
+npx vibefigma "https://www.figma.com/design/4i8Tp5btFPRqtkYXplnfT6/50-Web-Sign-up-log-in-designs--Community-?node-id=26-2944&t=d8ZfhZOwcLuUz0Jz-4"
 ```
 
 ### 🔑 Getting a Figma Access Token
@@ -43,6 +51,8 @@ npx vibefigma "https://www.figma.com/design/YOUR_FILE_ID"
 3. Click **Generate new token**
 4. Give it a name and click **Generate**
 5. Copy the token (you won't see it again!)
+6. Store it securely in a `.env` file or pass via `--token` flag
+
 
 ## Features
 
@@ -57,7 +67,7 @@ npx vibefigma "https://www.figma.com/design/YOUR_FILE_ID"
 
 ```bash
 # Convert a Figma design to React component
-npx vibefigma "https://www.figma.com/design/YOUR_FILE_ID?node-id=X-Y"
+npx vibefigma "https://www.figma.com/design/4i8Tp5btFPRqtkYXplnfT6/50-Web-Sign-up-log-in-designs--Community-?node-id=26-2944&t=d8ZfhZOwcLuUz0Jz-4"
 ```
 
 ### Custom Output Paths

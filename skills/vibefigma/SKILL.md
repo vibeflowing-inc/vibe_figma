@@ -1,6 +1,6 @@
 ---
 name: vibefigma
-description: Convert Figma designs to production-ready React components with Tailwind CSS. Use when user provides a Figma URL, asks to convert Figma designs to React/code, wants to extract components from Figma, or mentions "vibefigma". Requires a Figma access token (via --token flag or FIGMA_TOKEN env var).
+description: Convert Figma designs to production-ready React components with Tailwind CSS. Use when user provides a Figma URL, asks to convert Figma designs to React/code, wants to extract components from Figma, or mentions "vibefigma". Requires a Figma access token (via --token flag, FIGMA_TOKEN env var, or .env file).
 ---
 
 # VibeFigma - Figma to React Converter
@@ -30,6 +30,20 @@ export FIGMA_TOKEN=your_token
 npx vibefigma "https://www.figma.com/design/FILE_ID?node-id=X-Y"
 ```
 
+### Using .env File
+
+Ask the user to create a `.env` file in their project root:
+
+```env
+FIGMA_TOKEN=your_token_here
+```
+
+Then run:
+
+```bash
+npx vibefigma "https://www.figma.com/design/FILE_ID?node-id=X-Y"
+```
+
 ## Common Options
 
 | Option | Description |
@@ -44,6 +58,7 @@ npx vibefigma "https://www.figma.com/design/FILE_ID?node-id=X-Y"
 1. Go to [Figma Account Settings](https://www.figma.com/settings)
 2. Scroll to **Personal Access Tokens**
 3. Click **Generate new token** → name it → copy immediately
+4. Store it securely in a `.env` file or pass via `--token` flag
 
 ## Workflow
 

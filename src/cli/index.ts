@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 
+import 'dotenv/config'
 import { Command } from 'commander'
 import { convertCommand } from './commands/convert.js'
 import type { CliOptions } from './types.js'

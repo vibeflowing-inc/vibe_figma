@@ -1,6 +1,6 @@
 {
   "name": "vibefigma",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Convert Figma designs to React components with Tailwind CSS",
   "type": "module",
   "main": "dist/cli/index.js",
@@ -63,6 +63,7 @@
     "colord": "2.9.3",
     "commander": "^14.0.2",
     "css-what": "6.1.0",
+    "dotenv": "^17.2.3",
     "hono": "^4.11.4",
     "hono-rate-limiter": "^0.5.3",
     "htmltojsx": "^0.3.0",
