@@ -32,7 +32,7 @@ npx vibefigma "https://www.figma.com/design/FILE_ID?node-id=X-Y"
 
 ### Using .env File
 
-Ask the user to create a `.env` file in their project root:
+The user can add their Figma access token to a `.env` file in their project root:
 
 ```env
 FIGMA_TOKEN=your_token_here
@@ -43,6 +43,8 @@ Then run:
 ```bash
 npx vibefigma "https://www.figma.com/design/FILE_ID?node-id=X-Y"
 ```
+
+Note: If the token is not configured, vibefigma will throw an error. Only then inform the user about the token requirement.
 
 ## Common Options
 
@@ -63,8 +65,8 @@ npx vibefigma "https://www.figma.com/design/FILE_ID?node-id=X-Y"
 ## Workflow
 
 1. Get Figma URL with specific node selected (frame/component to convert)
-2. Ensure user has a Figma access token
-3. Run: `npx vibefigma "<URL>" --token <TOKEN> -c <output-path>`
+2. Run: `npx vibefigma "<URL>" -c <output-path>` (user configures token in .env or via --token flag)
+3. If vibefigma throws a token error, inform the user about the token requirement
 4. Review generated component
 5. If code needs cleanup, see `references/responsive-cleanup.md` for making code responsive and production-ready
 
