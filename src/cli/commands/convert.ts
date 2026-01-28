@@ -58,7 +58,8 @@ export async function convertCommand(options: CliOptions): Promise<void> {
         css: result.css,
         fonts: result.fonts,
       },
-      paths
+      paths,
+      finalOptions.force
     )
 
     logger.showSummary(savedFiles)

@@ -4,13 +4,20 @@ import 'dotenv/config'
 import { Command } from 'commander'
 import { convertCommand } from './commands/convert.js'
 import type { CliOptions } from './types.js'
+import { readFileSync } from 'fs'
+import { fileURLToPath } from 'url'
+import { dirname, join } from 'path'
+
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = dirname(__filename)
+const packageJson = JSON.parse(readFileSync(join(__dirname, '../../package.json'), 'utf-8'))
 
 const program = new Command()
 
 program
   .name('vibefigma')
   .description('Convert Figma designs to React components')
-  .version('1.0.0')
+  .version(packageJson.version)
 
 // Main command with URL as optional argument
 program
@@ -27,6 +34,7 @@ program
   .option('--no-responsive', 'Disable responsive design')
   .option('--no-fonts', 'Don\'t include fonts')
   .option('--interactive', 'Force interactive mode', false)
+  .option('-f, --force', 'Overwrite existing files without confirmation', false)
   .action(async (urlArg: string | undefined, options: any) => {
     // Merge URL argument with options
     const cliOptions: CliOptions = {
@@ -42,6 +50,7 @@ program
       responsive: options.responsive !== false,
       includeFonts: options.fonts !== false,
       interactive: options.interactive,
+      force: options.force,
     }
 
     await convertCommand(cliOptions)

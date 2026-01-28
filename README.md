@@ -33,6 +33,9 @@ The CLI will guide you through:
 
 ```bash
 npx vibefigma "https://www.figma.com/design/4i8Tp5btFPRqtkYXplnfT6/50-Web-Sign-up-log-in-designs--Community-?node-id=26-2944&t=d8ZfhZOwcLuUz0Jz-4" --token YOUR_TOKEN
+
+# Add --force to overwrite existing files without confirmation
+npx vibefigma "https://www.figma.com/design/4i8Tp5btFPRqtkYXplnfT6/50-Web-Sign-up-log-in-designs--Community-?node-id=26-2944&t=d8ZfhZOwcLuUz0Jz-4" --token YOUR_TOKEN --force
 ```
 
 ### 3. Using Environment Variable
@@ -87,6 +90,16 @@ npx vibefigma [url] -c ./src/components/Hero.tsx
 npx vibefigma [url] --no-tailwind
 ```
 
+### Skip Overwrite Confirmations
+
+```bash
+# Overwrite existing files without prompting (useful when files already exist)
+npx vibefigma [url] --force
+
+# Example with specific output path
+npx vibefigma [url] -c ./src/components/Hero.tsx --force
+```
+
 ### Advanced Options
 
 ```bash
@@ -122,6 +135,7 @@ Options:
   --no-responsive               Disable responsive design
   --no-fonts                    Don't include fonts
   --interactive                 Force interactive mode
+  -f, --force                   Overwrite existing files without confirmation
   -h, --help                    Display help for command
 ```
 
