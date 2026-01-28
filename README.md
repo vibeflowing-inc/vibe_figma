@@ -27,7 +27,7 @@ The CLI will guide you through:
 For Claude Code, install the skill to enable Figma to React conversion directly within your Claude Code environment.
 
 ```sh
-npx npx skills add vibeflowing-inc/vibe_figma --skill vibefigma
+npx skills add vibeflowing-inc/vibe_figma --skill vibefigma
 ```
 
 ### 3. Direct Command (Fast)
