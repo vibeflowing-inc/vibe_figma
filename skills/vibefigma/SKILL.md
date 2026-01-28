@@ -53,6 +53,7 @@ Note: If the token is not configured, vibefigma will throw an error. Only then i
 | `-t, --token <token>` | Figma access token |
 | `-c, --component <path>` | Output path (default: `./src/components/[Name].tsx`) |
 | `-a, --assets <dir>` | Assets directory (default: `./public`) |
+| `-f, --force` | Overwrite existing files without confirmation |
 | `--no-tailwind` | Generate regular CSS instead |
 
 ## Getting a Figma Access Token
@@ -65,10 +66,13 @@ Note: If the token is not configured, vibefigma will throw an error. Only then i
 ## Workflow
 
 1. Get Figma URL with specific node selected (frame/component to convert)
-2. Run: `npx vibefigma "<URL>" -c <output-path>` (user configures token in .env or via --token flag)
-3. If vibefigma throws a token error, inform the user about the token requirement
-4. Review generated component
-5. If code needs cleanup, see `references/responsive-cleanup.md` for making code responsive and production-ready
+2. **Check if output file already exists** at the target path (default: `./src/components/[Name].tsx` or user-specified path)
+3. If file exists, ask the user for confirmation before overwriting, then use the `--force` flag
+4. Run: `npx vibefigma "<URL>" -c <output-path>` (add `--force` if overwriting confirmed)
+   - User configures token in .env or via --token flag
+5. If vibefigma throws a token error, inform the user about the token requirement
+6. Review generated component
+7. If code needs cleanup, see `references/responsive-cleanup.md` for making code responsive and production-ready
 
 ## Output
 

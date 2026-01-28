@@ -11,6 +11,7 @@ export interface CliOptions {
   responsive?: boolean
   includeFonts?: boolean
   interactive?: boolean
+  force?: boolean
 }
 
 export interface ConversionResult {
