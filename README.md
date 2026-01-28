@@ -10,15 +10,8 @@ Transform your Figma designs into production-ready React components with Tailwin
 
 VibeFigma can be used in multiple ways:
 
-## Claude Code Skill
 
-For Claude Code, install the skill to enable Figma to React conversion directly within your Claude Code environment.
-
-```sh
-npx npx skills add vibeflowing-inc/vibe_figma --skill vibefigma
-```
-
-### 2. Using our CLI (Interactive - Easiest!)
+### 1. Using our CLI (Interactive - Easiest!)
 
 ```bash
 npx vibefigma --interactive
@@ -28,6 +21,14 @@ The CLI will guide you through:
 - Entering your Figma URL
 - Providing your access token
 - Choosing output paths
+
+## 2. Claude Code Skill
+
+For Claude Code, install the skill to enable Figma to React conversion directly within your Claude Code environment.
+
+```sh
+npx npx skills add vibeflowing-inc/vibe_figma --skill vibefigma
+```
 
 ### 3. Direct Command (Fast)
 
