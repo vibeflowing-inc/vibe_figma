@@ -1,4 +1,9 @@
 # VibeFigma - Figma to React Converter
+[![npm](https://img.shields.io/npm/v/vibefigma)](https://www.npmjs.com/package/vibefigma)
+[![stars](https://img.shields.io/github/stars/vibeflowing-inc/vibe_figma)](https://github.com/vibeflowing-inc/vibe_figma)
+[![license](https://img.shields.io/github/license/vibeflowing-inc/vibe_figma)](LICENSE)
+
+Built by [@nazeem](https://x.com/n4ze3m), [@alessiapacca](https://x.com/alessiapacca) and [@eliasaquand](https://x.com/eliasaquand).
 
 Transform your Figma designs into production-ready React components with Tailwind CSS automatically.
 
