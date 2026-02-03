@@ -2,8 +2,7 @@
 [![npm](https://img.shields.io/npm/v/vibefigma)](https://www.npmjs.com/package/vibefigma)
 [![stars](https://img.shields.io/github/stars/vibeflowing-inc/vibe_figma)](https://github.com/vibeflowing-inc/vibe_figma)
 [![license](https://img.shields.io/github/license/vibeflowing-inc/vibe_figma)](LICENSE)
-
-Built by [@nazeem](https://x.com/n4ze3m), [@alessiapacca](https://x.com/alessiapacca) and [@eliasaquand](https://x.com/eliasaquand).
+[![Join Discord](https://img.shields.io/badge/Join%20Discord-5865F2?logo=discord&logoColor=white)](https://discord.com/invite/Ctm2A2uEaq)
 
 Transform your Figma designs into production-ready React components with Tailwind CSS automatically.
 
@@ -218,3 +217,5 @@ This project includes code derived from [css-to-tailwindcss](https://github.com/
 This project is licensed under the GNU Affero General Public License v3.0 (AGPL-3.0). See the [LICENSE](LICENSE) file for the full license text.
 
 See the [NOTICE](NOTICE) file for details about third-party code used in this project.
+
+Built by [@nazeem](https://x.com/n4ze3m), [@alessiapacca](https://x.com/alessiapacca) and [@eliasaquand](https://x.com/eliasaquand).
