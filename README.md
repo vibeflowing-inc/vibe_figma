@@ -218,4 +218,7 @@ This project is licensed under the GNU Affero General Public License v3.0 (AGPL-
 
 See the [NOTICE](NOTICE) file for details about third-party code used in this project.
 
-Built by [@nazeem](https://x.com/n4ze3m), [@alessiapacca](https://x.com/alessiapacca) and [@eliasaquand](https://x.com/eliasaquand).
+[![Follow Nazeem](https://img.shields.io/twitter/follow/nazeem?style=social)](https://x.com/n4ze3m)
+[![Follow Alessia](https://img.shields.io/twitter/follow/alessiapacca?style=social)](https://x.com/alessiapacca)
+[![Follow Elia](https://img.shields.io/twitter/follow/eliasaquand?style=social)](https://x.com/eliasaquand)
+
