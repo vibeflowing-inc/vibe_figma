@@ -2,7 +2,7 @@
 > **Want to skip the setup?** Try VibeFigma instantly in the cloud - [Import from Figma](https://app.vibeflow.ai) is built directly into **[vibeflow.ai](https://app.vibeflow.ai)**. No installation needed, just paste your Figma URL and go.
 
 [![npm](https://img.shields.io/npm/v/vibefigma)](https://www.npmjs.com/package/vibefigma)
-[![stars](https://img.shields.io/github/stars/vibeflowing-inc/vibe_figma)](https://github.com/vibeflowing-inc/vibe_figma)
+[![stars](https://img.shields.io/github/stars/vibeflowing-inc/vibe_figma?style=social)](https://github.com/vibeflowing-inc/vibe_figma)
 [![license](https://img.shields.io/github/license/vibeflowing-inc/vibe_figma)](LICENSE)
 [![Join Discord](https://img.shields.io/badge/Join%20Discord-5865F2?logo=discord&logoColor=white)](https://discord.com/invite/Ctm2A2uEaq)
 
