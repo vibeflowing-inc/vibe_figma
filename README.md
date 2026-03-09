@@ -1,4 +1,10 @@
 # VibeFigma - Figma to React Converter
+> **Want to skip the setup?** Try VibeFigma instantly in the cloud - [Import from Figma](https://app.vibeflow.ai) is built directly into **[vibeflow.ai](https://app.vibeflow.ai)**. No installation needed, just paste your Figma URL and go.
+
+[![npm](https://img.shields.io/npm/v/vibefigma)](https://www.npmjs.com/package/vibefigma)
+[![stars](https://img.shields.io/github/stars/vibeflowing-inc/vibe_figma?style=social)](https://github.com/vibeflowing-inc/vibe_figma)
+[![license](https://img.shields.io/github/license/vibeflowing-inc/vibe_figma)](LICENSE)
+[![Join Discord](https://img.shields.io/badge/Join%20Discord-5865F2?logo=discord&logoColor=white)](https://discord.com/invite/Ctm2A2uEaq)
 
 Transform your Figma designs into production-ready React components with Tailwind CSS automatically.
 
@@ -10,15 +16,8 @@ Transform your Figma designs into production-ready React components with Tailwin
 
 VibeFigma can be used in multiple ways:
 
-## Claude Code Skill
 
-For Claude Code, install the skill to enable Figma to React conversion directly within your Claude Code environment.
-
-```sh
-npx npx skills add vibeflowing-inc/vibe_figma --skill vibefigma
-```
-
-### 2. Using our CLI (Interactive - Easiest!)
+### 1. Using our CLI (Interactive - Easiest!)
 
 ```bash
 npx vibefigma --interactive
@@ -29,10 +28,21 @@ The CLI will guide you through:
 - Providing your access token
 - Choosing output paths
 
+### 2. Claude Code Skill
+
+For Claude Code, install the skill to enable Figma to React conversion directly within your Claude Code environment.
+
+```sh
+npx skills add vibeflowing-inc/vibe_figma --skill vibefigma
+```
+
 ### 3. Direct Command (Fast)
 
 ```bash
 npx vibefigma "https://www.figma.com/design/4i8Tp5btFPRqtkYXplnfT6/50-Web-Sign-up-log-in-designs--Community-?node-id=26-2944&t=d8ZfhZOwcLuUz0Jz-4" --token YOUR_TOKEN
+
+# Add --force to overwrite existing files without confirmation
+npx vibefigma "https://www.figma.com/design/4i8Tp5btFPRqtkYXplnfT6/50-Web-Sign-up-log-in-designs--Community-?node-id=26-2944&t=d8ZfhZOwcLuUz0Jz-4" --token YOUR_TOKEN --force
 ```
 
 ### 3. Using Environment Variable
@@ -87,6 +97,16 @@ npx vibefigma [url] -c ./src/components/Hero.tsx
 npx vibefigma [url] --no-tailwind
 ```
 
+### Skip Overwrite Confirmations
+
+```bash
+# Overwrite existing files without prompting (useful when files already exist)
+npx vibefigma [url] --force
+
+# Example with specific output path
+npx vibefigma [url] -c ./src/components/Hero.tsx --force
+```
+
 ### Advanced Options
 
 ```bash
@@ -122,6 +142,7 @@ Options:
   --no-responsive               Disable responsive design
   --no-fonts                    Don't include fonts
   --interactive                 Force interactive mode
+  -f, --force                   Overwrite existing files without confirmation
   -h, --help                    Display help for command
 ```
 
@@ -198,3 +219,14 @@ This project includes code derived from [css-to-tailwindcss](https://github.com/
 This project is licensed under the GNU Affero General Public License v3.0 (AGPL-3.0). See the [LICENSE](LICENSE) file for the full license text.
 
 See the [NOTICE](NOTICE) file for details about third-party code used in this project.
+
+## Built by Vibeflow
+
+VibeFigma is the open-source core powering **[vibeflow.ai](https://vibeflow.ai)**.
+For custom work or enterprise needs, reach out to Alessia & Elia directly:  
+📩 [founders@vibeflow.ai](mailto:founders@vibeflow.ai)
+
+[![Follow Nazeem](https://img.shields.io/twitter/follow/nazeem?style=social)](https://x.com/n4ze3m)
+[![Follow Alessia](https://img.shields.io/twitter/follow/alessiapacca?style=social)](https://x.com/alessiapacca)
+[![Follow Elia](https://img.shields.io/twitter/follow/eliasaquand?style=social)](https://x.com/eliasaquand)
+

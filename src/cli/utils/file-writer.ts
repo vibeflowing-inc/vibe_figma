@@ -22,7 +22,11 @@ async function fileExists(filePath: string): Promise<boolean> {
   }
 }
 
-async function confirmOverwrite(filePath: string): Promise<boolean> {
+async function confirmOverwrite(filePath: string, force?: boolean): Promise<boolean> {
+  if (force) {
+    return true
+  }
+
   const response = await prompts({
     type: 'confirm',
     name: 'overwrite',
@@ -70,13 +74,14 @@ export async function saveComponent(
   jsx: string,
   componentPath: string,
   fonts: string,
-  cssPath?: string
+  cssPath?: string,
+  force?: boolean
 ): Promise<void> {
   const dir = path.dirname(componentPath)
   await ensureDir(dir)
 
   if (await fileExists(componentPath)) {
-    const shouldOverwrite = await confirmOverwrite(componentPath)
+    const shouldOverwrite = await confirmOverwrite(componentPath, force)
     if (!shouldOverwrite) {
       throw new Error(`Skipped: ${componentPath} already exists`)
     }
@@ -90,11 +95,11 @@ export async function saveComponent(
   await fs.writeFile(componentPath, componentContent, 'utf-8')
 }
 
-export async function saveCss(css: string, cssPath: string): Promise<void> {
+export async function saveCss(css: string, cssPath: string, force?: boolean): Promise<void> {
   const dir = path.dirname(cssPath)
   await ensureDir(dir)
   if (await fileExists(cssPath)) {
-    const shouldOverwrite = await confirmOverwrite(cssPath)
+    const shouldOverwrite = await confirmOverwrite(cssPath, force)
     if (!shouldOverwrite) {
       throw new Error(`Skipped: ${cssPath} already exists`)
     }
@@ -105,7 +110,8 @@ export async function saveCss(css: string, cssPath: string): Promise<void> {
 async function saveAsset(
   filename: string,
   base64Data: string,
-  assetsDir: string
+  assetsDir: string,
+  force?: boolean
 ): Promise<string> {
   // Remove data URL prefix (e.g., data:image/png;base64,) or base64: prefix
   let cleanBase64 = base64Data
@@ -119,7 +125,7 @@ async function saveAsset(
   const assetPath = path.join(assetsDir, filename)
 
   if (await fileExists(assetPath)) {
-    const shouldOverwrite = await confirmOverwrite(assetPath)
+    const shouldOverwrite = await confirmOverwrite(assetPath, force)
     if (!shouldOverwrite) {
       return assetPath
     }
@@ -133,13 +139,14 @@ async function saveAsset(
 
 export async function saveAssets(
   assets: Record<string, string>,
-  assetsDir: string
+  assetsDir: string,
+  force?: boolean
 ): Promise<string[]> {
   const savedPaths: string[] = []
 
   for (const [filename, base64Data] of Object.entries(assets)) {
     try {
-      const savedPath = await saveAsset(filename, base64Data, assetsDir)
+      const savedPath = await saveAsset(filename, base64Data, assetsDir, force)
       savedPaths.push(savedPath)
     } catch (error) {
       console.error(`Failed to save asset ${filename}:`, error)
@@ -164,7 +171,8 @@ export async function saveConversionResults(
     component: string
     css?: string
     assets: string
-  }
+  },
+  force?: boolean
 ): Promise<SavedFiles> {
   const savedFiles: SavedFiles = {
     component: '',
@@ -175,17 +183,18 @@ export async function saveConversionResults(
     result.jsx,
     paths.component,
     result.fonts,
-    willSaveCss ? paths.css : undefined
+    willSaveCss ? paths.css : undefined,
+    force
   )
   savedFiles.component = paths.component
 
   if (willSaveCss && paths.css) {
-    await saveCss(result.css, paths.css)
+    await saveCss(result.css, paths.css, force)
     savedFiles.css = paths.css
   }
 
   if (Object.keys(result.assets).length > 0) {
-    savedFiles.assets = await saveAssets(result.assets, paths.assets)
+    savedFiles.assets = await saveAssets(result.assets, paths.assets, force)
   }
 
   return savedFiles
