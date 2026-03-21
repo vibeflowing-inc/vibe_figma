@@ -1,5 +1,5 @@
 # VibeFigma - Figma to React Converter
-> **Want to skip the setup?** Try VibeFigma instantly in the cloud - [Import from Figma](https://app.vibeflow.ai) is built directly into **[vibeflow.ai](https://app.vibeflow.ai)**. No installation needed, just paste your Figma URL and go.
+> **Want to skip the setup?** Try VibeFigma instantly in the cloud - [Import from Figma](https://ui.vibeflow.ai) is built directly into **[VibeFlow UI](https://ui.vibeflow.ai)**. No installation needed, just paste your Figma URL and go.
 
 [![npm](https://img.shields.io/npm/v/vibefigma)](https://www.npmjs.com/package/vibefigma)
 [![stars](https://img.shields.io/github/stars/vibeflowing-inc/vibe_figma?style=social)](https://github.com/vibeflowing-inc/vibe_figma)
