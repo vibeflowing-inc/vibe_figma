@@ -222,7 +222,7 @@ See the [NOTICE](NOTICE) file for details about third-party code used in this pr
 
 ## Built by Vibeflow
 
-VibeFigma is the open-source core powering **[vibeflow.ai](https://vibeflow.ai)**.
+VibeFigma is the open-source core powering **[VibeFlow UI](https://ui.vibeflow.ai)**.
 For custom work or enterprise needs, reach out to Alessia & Elia directly:  
 📩 [founders@vibeflow.ai](mailto:founders@vibeflow.ai)
 
