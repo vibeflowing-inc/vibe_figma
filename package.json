@@ -58,7 +58,7 @@
     "@babel/parser": "^7.28.6",
     "@babel/traverse": "^7.28.6",
     "@babel/types": "^7.28.6",
-    "@colordx/core": "^1.11.2",
+    "@colordx/core": "^5.0.2",
     "ai": "^6.0.39",
     "chalk": "^5.6.2",
     "commander": "^14.0.2",

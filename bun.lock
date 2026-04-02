@@ -10,7 +10,7 @@
         "@babel/parser": "^7.28.6",
         "@babel/traverse": "^7.28.6",
         "@babel/types": "^7.28.6",
-        "@colordx/core": "^1.11.2",
+        "@colordx/core": "^5.0.2",
         "ai": "^6.0.39",
         "chalk": "^5.6.2",
         "commander": "^14.0.2",
@@ -68,7 +68,7 @@
 
     "@babel/types": ["@babel/types@7.28.6", "", { "dependencies": { "@babel/helper-string-parser": "^7.27.1", "@babel/helper-validator-identifier": "^7.28.5" } }, "sha512-0ZrskXVEHSWIqZM/sQZ4EV3jZJXRkio/WCxaqKZP1g//CEWEPSfeZFcms4XeKBCHU0ZKnIkdJeU/kF+eRp5lBg=="],
 
-    "@colordx/core": ["@colordx/core@1.11.2", "", {}, "sha512-13iMSNshQz3MZTvhU5KB64wCW3KxKXGCbTcIYsC9eFGolA793qjLsNkWjHbA/8HatuCxA3NWwYEBgxOzbliiOw=="],
+    "@colordx/core": ["@colordx/core@5.0.2", "", {}, "sha512-rQAOi9QmDymEbs021rstydG9qaskMVnf4f8fY37dWbsrdyWJ+yYSJmXYILrtZNJulIu5ju5M9jsQRde9LRNBSw=="],
 
     "@jridgewell/gen-mapping": ["@jridgewell/gen-mapping@0.3.13", "", { "dependencies": { "@jridgewell/sourcemap-codec": "^1.5.0", "@jridgewell/trace-mapping": "^0.3.24" } }, "sha512-2kkt/7niJ6MgEPxF0bYdQ6etZaA+fQvDcLKckhy1yIQOzaoKjBBjSj63/aLVjYE3qhRt5dvM+uUyfCg6UKCBbA=="],
 

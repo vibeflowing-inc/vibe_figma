@@ -6,7 +6,10 @@ import type {
 } from 'tailwindcss/types/config';
 import type { ConverterMapping } from '../types/converter-mapping.js';
 
-import { colordx as colord } from '@colordx/core';
+import { colordx as colord, extend } from '@colordx/core';
+import namesPlugin from '@colordx/core/plugins/names';
+
+extend([namesPlugin]);
 import { buildMediaQueryByScreen } from './build-media-query-by-screen.js';
 import { flattenObject } from './flatten-object.js';
 import { remValueToPx } from './rem-value-to-px.js';
