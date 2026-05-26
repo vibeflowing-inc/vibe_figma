@@ -220,7 +220,7 @@ This project is licensed under the GNU Affero General Public License v3.0 (AGPL-
 
 See the [NOTICE](NOTICE) file for details about third-party code used in this project.
 
-## Built by Vibeflow
+## Contacts
 
 VibeFigma is the open-source core powering **[VibeFlow UI](https://ui.vibeflow.ai)**.
 For custom work or enterprise needs, reach out to Alessia & Elia directly:  
